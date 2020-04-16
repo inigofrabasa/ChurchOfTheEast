@@ -5,19 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView btnBack, btnDonations, btnMemebership, btnExit;
-    private ImageButton btnProfile, btnBookings, btnLive, btnNews, btnChurch;
+    private View btnProfile, btnBookings, btnLive, btnNews, btnChurch;
     private WebView webView;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViews();
         initWebView();
-
     }
 
     private void findViews(){
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnNews = findViewById(R.id.btn_news);
         btnChurch = findViewById(R.id.btn_church);
         webView = findViewById(R.id.webView);
+
+        progressBar = findViewById(R.id.progressBar);
 
         btnBack.setOnClickListener(this);
         btnDonations.setOnClickListener(this);
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("SetJavaScriptEnabled")
     private void initWebView(){
         webView.setWebChromeClient(new WebChromeClient());
-        webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebClient(progressBar));
         webView.getSettings().setJavaScriptEnabled(true);
 
         webView.loadUrl(getResources().getString(R.string.home_screen));
@@ -103,6 +106,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } catch (ActivityNotFoundException e) {
             i.setPackage(null);
             startActivity(i);
+        }
+    }
+
+    private static class WebClient extends WebViewClient {
+
+        private ProgressBar progressBar;
+
+        WebClient(ProgressBar progressBar) {
+            this.progressBar=progressBar;
+            progressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon){
+            super.onPageStarted(view,url,favicon);
+        }
+
+        @Override
+        public void onPageFinished(WebView view,String url){
+            progressBar.setVisibility(View.GONE);
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            progressBar.setVisibility(View.VISIBLE);
+            return true;
         }
     }
 }

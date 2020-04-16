@@ -86,60 +86,118 @@
         android:weightSum="5"
         android:background="@drawable/bg">
 
-        <ImageButton
+        <LinearLayout
             android:id="@+id/btn_profile"
-            style="@style/image_btn"
-            android:background="@drawable/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             tools:ignore="UnusedAttribute"
-            />
+            android:padding="10dp"
+            android:gravity="center"
+            >
 
-        <ImageButton
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/btn_bookings"
-            style="@style/image_btn"
-            android:background="@drawable/bookings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             tools:ignore="UnusedAttribute"
-            />
+            android:padding="10dp"
+            android:gravity="center"
+            >
 
-        <ImageButton
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/bookings"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/btn_live"
-            style="@style/image_btn"
-            android:background="@drawable/live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             tools:ignore="UnusedAttribute"
-            />
+            android:padding="10dp"
+            android:gravity="center"
+            >
 
-        <ImageButton
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/live"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/btn_news"
-            style="@style/image_btn"
-            android:background="@drawable/news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             tools:ignore="UnusedAttribute"
-            />
+            android:padding="10dp"
+            android:gravity="center"
+            >
 
-        <ImageButton
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/news"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/btn_church"
-            style="@style/image_btn"
-            android:background="@drawable/church"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             tools:ignore="UnusedAttribute"
-            />
+            android:padding="10dp"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/church"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
 </RelativeLayout>
