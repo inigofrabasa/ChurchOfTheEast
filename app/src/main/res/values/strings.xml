@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Church of the east</string>
+
+    <string name="label_back">Back</string>
+    <string name="label_donations">Donations</string>
+    <string name="label_membership">Membership</string>
+    <string name="label_exit">Exit</string>
+
+    <string name="home_screen">https://android.churchoftheeast.info/</string>
+    <string name="url_btn_2">https://android.churchoftheeast.info/payments/</string>
+    <string name="url_btn_3">https://android.churchoftheeast.info/membership/</string>
+    <string name="url_btn_5">https://android.churchoftheeast.info/login</string>
+    <string name="url_btn_6">https://android.churchoftheeast.info/bookings</string>
+    <string name="url_btn_7">https://android.churchoftheeast.info/live</string>
+    <string name="url_btn_8">https://android.churchoftheeast.info/news</string>
+    <string name="url_btn_9">https://android.churchoftheeast.info/churches</string>
+</resources>
