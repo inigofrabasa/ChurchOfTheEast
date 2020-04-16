@@ -12,6 +12,7 @@
     <string name="url_btn_5">https://android.churchoftheeast.info/login</string>
     <string name="url_btn_6">https://android.churchoftheeast.info/bookings</string>
     <string name="url_btn_7">https://android.churchoftheeast.info/live</string>
+    <string name="url_btn_7_1">https://www.google.com</string>
     <string name="url_btn_8">https://android.churchoftheeast.info/news</string>
     <string name="url_btn_9">https://android.churchoftheeast.info/churches</string>
 </resources>

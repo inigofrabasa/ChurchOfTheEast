@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("SetJavaScriptEnabled")
     private void initWebView(){
         webView.setWebChromeClient(new WebChromeClient());
-        webView.setWebViewClient(new WebClient(progressBar));
+        webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
 
         webView.loadUrl(getResources().getString(R.string.home_screen));
@@ -109,11 +109,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private static class WebClient extends WebViewClient {
+    private static class CustomWebClient extends WebViewClient {
 
         private ProgressBar progressBar;
 
-        WebClient(ProgressBar progressBar) {
+        CustomWebClient(ProgressBar progressBar) {
             this.progressBar=progressBar;
             progressBar.setVisibility(View.VISIBLE);
         }
